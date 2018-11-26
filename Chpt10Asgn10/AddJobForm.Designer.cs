@@ -30,12 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddJobForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtJobNum = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.CommentLabel = new System.Windows.Forms.Label();
             this.Comment = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Paid = new System.Windows.Forms.TextBox();
-            this.Done = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.DueDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,24 +51,24 @@
             this.CustPhone = new System.Windows.Forms.TextBox();
             this.CustNameLabel = new System.Windows.Forms.Label();
             this.CustName = new System.Windows.Forms.TextBox();
-            this.AddButton = new System.Windows.Forms.Button();
+            this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.JobNum = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.Label();
+            this.RushJobChecker = new System.Windows.Forms.CheckBox();
+            this.PaidCheckBox = new System.Windows.Forms.CheckBox();
+            this.DoneCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.JobNum);
+            this.groupBox1.Controls.Add(this.DoneCheckBox);
+            this.groupBox1.Controls.Add(this.PaidCheckBox);
+            this.groupBox1.Controls.Add(this.RushJobChecker);
+            this.groupBox1.Controls.Add(this.txtJobNum);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.CommentLabel);
             this.groupBox1.Controls.Add(this.Comment);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.Paid);
-            this.groupBox1.Controls.Add(this.Done);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.DueDate);
             this.groupBox1.Controls.Add(this.label6);
@@ -95,6 +93,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Job Details";
             // 
+            // txtJobNum
+            // 
+            this.txtJobNum.BackColor = System.Drawing.SystemColors.Window;
+            this.txtJobNum.Location = new System.Drawing.Point(65, 48);
+            this.txtJobNum.Name = "txtJobNum";
+            this.txtJobNum.Size = new System.Drawing.Size(192, 20);
+            this.txtJobNum.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Job #";
+            // 
             // CommentLabel
             // 
             this.CommentLabel.AutoSize = true;
@@ -112,40 +127,6 @@
             this.Comment.Name = "Comment";
             this.Comment.Size = new System.Drawing.Size(192, 146);
             this.Comment.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(169, 467);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Paid";
-            // 
-            // Paid
-            // 
-            this.Paid.BackColor = System.Drawing.SystemColors.Window;
-            this.Paid.Location = new System.Drawing.Point(208, 464);
-            this.Paid.Name = "Paid";
-            this.Paid.Size = new System.Drawing.Size(49, 20);
-            this.Paid.TabIndex = 19;
-            // 
-            // Done
-            // 
-            this.Done.BackColor = System.Drawing.SystemColors.Window;
-            this.Done.Location = new System.Drawing.Point(107, 464);
-            this.Done.Name = "Done";
-            this.Done.Size = new System.Drawing.Size(49, 20);
-            this.Done.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(68, 467);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Done";
             // 
             // label7
             // 
@@ -293,14 +274,14 @@
             this.CustName.Size = new System.Drawing.Size(192, 20);
             this.CustName.TabIndex = 0;
             // 
-            // AddButton
+            // OkButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(11, 545);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
-            this.AddButton.TabIndex = 8;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.OkButton.Location = new System.Drawing.Point(11, 545);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(75, 23);
+            this.OkButton.TabIndex = 8;
+            this.OkButton.Text = "Enter";
+            this.OkButton.UseVisualStyleBackColor = true;
             // 
             // CancelButton
             // 
@@ -312,32 +293,45 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 51);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 13);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Job #";
-            // 
-            // JobNum
-            // 
-            this.JobNum.BackColor = System.Drawing.SystemColors.Window;
-            this.JobNum.Location = new System.Drawing.Point(65, 48);
-            this.JobNum.Name = "JobNum";
-            this.JobNum.Size = new System.Drawing.Size(192, 20);
-            this.JobNum.TabIndex = 23;
-            // 
             // Title
             // 
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(116, 22);
+            this.Title.Location = new System.Drawing.Point(134, 22);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(88, 24);
+            this.Title.Size = new System.Drawing.Size(44, 24);
             this.Title.TabIndex = 11;
-            this.Title.Text = "Add Job";
+            this.Title.Text = "Job";
+            // 
+            // RushJobChecker
+            // 
+            this.RushJobChecker.AutoSize = true;
+            this.RushJobChecker.Location = new System.Drawing.Point(32, 463);
+            this.RushJobChecker.Name = "RushJobChecker";
+            this.RushJobChecker.Size = new System.Drawing.Size(71, 17);
+            this.RushJobChecker.TabIndex = 24;
+            this.RushJobChecker.Text = "Rush Job";
+            this.RushJobChecker.UseVisualStyleBackColor = true;
+            // 
+            // PaidCheckBox
+            // 
+            this.PaidCheckBox.AutoSize = true;
+            this.PaidCheckBox.Location = new System.Drawing.Point(206, 463);
+            this.PaidCheckBox.Name = "PaidCheckBox";
+            this.PaidCheckBox.Size = new System.Drawing.Size(47, 17);
+            this.PaidCheckBox.TabIndex = 25;
+            this.PaidCheckBox.Text = "Paid";
+            this.PaidCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DoneCheckBox
+            // 
+            this.DoneCheckBox.AutoSize = true;
+            this.DoneCheckBox.Location = new System.Drawing.Point(126, 463);
+            this.DoneCheckBox.Name = "DoneCheckBox";
+            this.DoneCheckBox.Size = new System.Drawing.Size(52, 17);
+            this.DoneCheckBox.TabIndex = 26;
+            this.DoneCheckBox.Text = "Done";
+            this.DoneCheckBox.UseVisualStyleBackColor = true;
             // 
             // AddJobForm
             // 
@@ -346,7 +340,7 @@
             this.ClientSize = new System.Drawing.Size(336, 581);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.AddButton);
+            this.Controls.Add(this.OkButton);
             this.Controls.Add(this.CancelButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -365,14 +359,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox JobNum;
+        private System.Windows.Forms.TextBox txtJobNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label CommentLabel;
         private System.Windows.Forms.TextBox Comment;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox Paid;
-        private System.Windows.Forms.TextBox Done;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox DueDate;
         private System.Windows.Forms.Label label6;
@@ -390,8 +380,11 @@
         private System.Windows.Forms.TextBox CustPhone;
         private System.Windows.Forms.Label CustNameLabel;
         private System.Windows.Forms.TextBox CustName;
-        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.CheckBox PaidCheckBox;
+        private System.Windows.Forms.CheckBox RushJobChecker;
+        private System.Windows.Forms.CheckBox DoneCheckBox;
     }
 }

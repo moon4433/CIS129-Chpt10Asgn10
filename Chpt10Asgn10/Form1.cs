@@ -13,8 +13,8 @@ namespace Chpt10Asgn10
 {
     public partial class JobListApp : Form
     {
-        public List<int> jobs = new List<int>();
-        public int jobNum;
+        public ArrayList jobs = new ArrayList();
+        
         
 
         public JobListApp()
@@ -35,8 +35,8 @@ namespace Chpt10Asgn10
         
         private void EditButton_Click(object sender, EventArgs e)
         {
-            JobEditForm ejForm = new JobEditForm();
-            ejForm.ShowDialog();
+            AddJobForm ajForm = new AddJobForm();
+            ajForm.ShowDialog();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
