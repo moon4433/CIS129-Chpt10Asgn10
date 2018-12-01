@@ -13,6 +13,7 @@ namespace Chpt10Asgn10
     public partial class AddJobForm : Form
     {
 
+        
         public int JobNum
         {
             get
@@ -24,6 +25,7 @@ namespace Chpt10Asgn10
                 txtJobNum.Text = value.ToString();
             }
         }
+    
         public string CustomerName
         {
             get
@@ -297,6 +299,7 @@ namespace Chpt10Asgn10
             }
             else
             {
+                
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
