@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Chpt10Asgn10
 {
+    // this part of class is to handle the gathering and setting of all the Job's info
     public partial class AddJobForm : Form
     {
 
@@ -218,9 +219,10 @@ namespace Chpt10Asgn10
 
         }
 
+        // this method handles if the ok button was pressed
         private void OkButton_Click(object sender, EventArgs e)
         {
-            if (txtJobNum.Text == "" ||
+            if (txtJobNum.Text == "" || // this checker handles checking that certain areas were filled in
                 CustName.Text == "" ||
                 CustPhone.Text == "" ||
                 txtDeviceType.Text == "" ||
@@ -230,13 +232,13 @@ namespace Chpt10Asgn10
                 txtDueDate.Text == ""
                 )
             {
-                if (txtJobNum.Text == "")
+                if (txtJobNum.Text == "") // if the certain areas are not filled
                 {
-                    txtJobNum.BackColor = Color.Red;
+                    txtJobNum.BackColor = Color.Red; // turn them red
                 }
                 else
                 {
-                    txtJobNum.BackColor = Color.White;
+                    txtJobNum.BackColor = Color.White; // if the user fills them turn white again
                 }
                 if (CustName.Text == "")
                 {
@@ -300,7 +302,7 @@ namespace Chpt10Asgn10
             else
             {
                 
-                DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK; 
                 this.Close();
             }
         }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace Chpt10Asgn10
 {
+
+    // this part of the class is basically like the add job form... no it is exactly the add job form, just with info already passed into it.
     public partial class JobEditForm : Form
     {
 
@@ -170,6 +172,7 @@ namespace Chpt10Asgn10
                     if (RushJobChecker.Checked == true)
                     {
                         RushJobChecker.Enabled = false;
+                        Price.Enabled = false;
                     }
                 }
             }
